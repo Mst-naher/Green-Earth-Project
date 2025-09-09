@@ -132,12 +132,12 @@
       <div>
         <h1 class="font-bold text-3xl text-center p-6">Choose Your Trees </h1>
       </div>
-      <div class="container mx-auto grid grid-cols-12 gap-5 mt-5">
+      <div class="container mx-auto grid grid-col-1 lg:grid-cols-12  gap-5 mt-5">
         <!-- left side category buttons -->
-        <section class="col-span-2 ">
+        <section class="col-span-1 lg:col-span-2 ">
           <div class="col-span-2 ">
-            <div class="text-left p-2">
-              <h1 class="font-semibold">Categories</h1>
+            <div class="  items-center lg:text-left p-2">
+              <h1 class="font-bold">Categories</h1>
             <ul id="categoryContainer" class=" ">
               <li class=" hover:bg-green-600 coursor-pointer rounded-md m-1 p-1 ">All Trees</li>
             
@@ -147,18 +147,18 @@
         </section>
         <!-- center card container -->
         <section class="col-span-8 ">
-          <div id="plantContainer" class=" gap-3 grid grid-cols-3">
+          <div id="plantContainer" class=" gap-3 grid col-span-1 lg:grid-cols-3">
             <h1>Cards Container</h1>
           </div>
         </section>
         <!-- Right side Cart Container -->
         <section class="col-span-2  rounded-lg bg-white">
-          <div class="col-span-2">
-           <div>
-             <h1 class="text-center mt-5 rounded-sm">Your Cart</h1>
+          <div class="  lg:col-span-2 ">
+           <div class="p-2">
+             <h1 class="text-2xl font-semibold mt-5 rounded-sm">Your Cart</h1>
            </div>
 
-           <div id="cartContainer"> </div>
+           <div id="cartContainer" class="p-2"> </div>
 
             
           </div>
