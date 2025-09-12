@@ -3,7 +3,7 @@
 const allPlantsContainer = document.getElementById("allPlantsContainer");
 
 const categoryContainer = document.getElementById("categoryContainer");
-const plantContainer = document.getElementById("plantContainer");
+// const plantContainer = document.getElementById("plantContainer");
 const cartContainer = document.getElementById("cartContainer");
 const cartCounter = document.getElementById("cartCounter");
 
@@ -30,7 +30,7 @@ const loadPlants = () => {
 };
 
 const displayPlants = (plants) => {
-
+ allPlantsContainer.innerHTML = ''
   plants
     .forEach((plant) => {
       const div = document.createElement("div")
@@ -84,10 +84,12 @@ const loadCategory = () => {
 const showCategory = (categories) => {
   categories.forEach((cat) => {
     // console.log(cat.category_name);
-    categoryContainer.innerHTML += `
+    const div = document.createElement("li")
+   div.innerHTML = `
     <li onclick="loadPlantByCategory(${cat.id})" id=${cat.id} class=" hover:bg-green-600 cursor-pointer rounded-md m-1 p-1  ">${cat.category_name}</li>
   
    `;
+   categoryContainer.append(div)
   });
 
   categoryContainer.addEventListener("click", (e) => {
@@ -121,6 +123,7 @@ const loadPlantByCategory = (categoryId) => {
 
 const showPlantByCategory = (plants) => {
   console.log(plants);
+allPlantsContainer.innerHTML = ""
 
   plants.forEach((plant) => {
     const div = document.createElement("div")
@@ -216,9 +219,12 @@ const showCarts = (carts) => {
 
 const handleDeleteCart = (cartId) => {
   // console.log(cartId)
-  const filteredCarts = carts.filter((cart) => cart.id !== cartId);
+  const filteredCarts = carts.findIndex((cart) => cart.id === cartId);
+  if(filteredCarts > -1){
+carts.splice(filteredCarts, 1)
+  }
   console.log(filteredCarts);
-  carts = filteredCarts;
+
   showCarts(carts);
 };
 
