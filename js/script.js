@@ -33,8 +33,9 @@ const displayPlants = (plants) => {
 
   plants
     .forEach((plant) => {
+      const div = document.createElement("div")
       // console.log(plant);
-      allPlantsContainer.innerHTML += `
+      div.innerHTML += `
       
       <div  class=""> 
      <div  class=" mb-2 p-2 bg-white rounded-lg">
@@ -60,7 +61,7 @@ const displayPlants = (plants) => {
     </div>
       
       `;
-
+allPlantsContainer.append(div)
     })
 
    
@@ -84,7 +85,7 @@ const showCategory = (categories) => {
   categories.forEach((cat) => {
     // console.log(cat.category_name);
     categoryContainer.innerHTML += `
-    <li id=${cat.id} class=" hover:bg-green-600 cursor-pointer rounded-md m-1 p-1  ">${cat.category_name}</li>
+    <li onclick="loadPlantByCategory(${cat.id})" id=${cat.id} class=" hover:bg-green-600 cursor-pointer rounded-md m-1 p-1  ">${cat.category_name}</li>
   
    `;
   });
@@ -96,17 +97,17 @@ const showCategory = (categories) => {
     allLi.forEach((li) => {
       li.classList.remove("bg-green-600");
     });
-
+console.log(e.target.id);
     if (e.target.localName === "li") {
       // console.log(e.target.id)
       e.target.classList.add("bg-green-600");
-      loadPlantByCategory(e.target.id);
+      // loadPlantByCategory(e.target.id);
     }
   });
 };
 
 const loadPlantByCategory = (categoryId) => {
-  // console.log(categoryId);
+  console.log(categoryId);
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
     .then((json) => {
@@ -119,10 +120,11 @@ const loadPlantByCategory = (categoryId) => {
 };
 
 const showPlantByCategory = (plants) => {
-  // console.log(plants);
-  plantContainer.innerHTML = "";
+  console.log(plants);
+
   plants.forEach((plant) => {
-    plantContainer.innerHTML += `
+    const div = document.createElement("div")
+    div.innerHTML = `
 
     <div  class=""> 
      <div  class=" mb-2 p-2 bg-white rounded-lg">
@@ -149,10 +151,11 @@ const showPlantByCategory = (plants) => {
  
   
   `;
+allPlantsContainer.append(div);
   });
 };
 
-plantContainer.addEventListener("click", (e) => {
+allPlantsContainer.addEventListener("click", (e) => {
   // console.log(e.target.innerText)
 
   if (e.target.innerText === "Add to Cart") {
@@ -226,7 +229,7 @@ const handleDeleteCart = (cartId) => {
 // });
 
 loadCategory();
-loadPlantByCategory();
+// loadPlantByCategory();
 loadPlants();
 
 // Using Async await
