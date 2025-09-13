@@ -1,12 +1,12 @@
-##
-
-
+## Questions' Answers are here:
 
 
 ```bash
-1.Answer:
+        1.Answer:
+
  🔷 Var :
-  Var is a  function-scoped. It means the variable is only accessible inside the function where it was declared, and not outside of it. And does not matter how many '{}' blocks are inside of that function.
+  Var is a  function-scoped. It means the variable is only accessible inside the function where it was declared,
+   and not outside of it. And does not matter how many '{}' blocks are inside of that function.
    Can be re-declared inside the same scope without any error. 
     Rarely recommended because it can cause confusing bugs. 
 
@@ -19,7 +19,8 @@ It use when the variable's value changes.
       Const is a block-scoped.Can not be redecalared or reassigned.It is used when the variable's value should not change.
 
 
-2.Answer:
+    2.Answer:
+
 🔷 forEach() 
 When we want to do something for every element then we can forEach() method and will get the desire result.
 It designed for side effects. And it is created as a cleaner alternative to a for loop when just want to do something with each element.
@@ -55,8 +56,9 @@ ex:
  console.log(evens);  //[2, 4]
 
 
- 3.Answer:
- An arrow function is a shorter, cleaner way to write functions in JavaScript. It uses the => (araow) syntax and this is introduced in ES6 (ECMAScript 2015).
+    3.Answer:
+    
+ 🔹An arrow function is a shorter, cleaner way to write functions in JavaScript. It uses the => (araow) syntax and this is introduced in ES6 (ECMAScript 2015).
   No need to the function keyword.If the body is a single expression, we can omit 'return' and '{}' . It is by default return the result and it called implecit return.
   ex:
   const square = x => x * x;
@@ -71,7 +73,8 @@ ex:
   Same result but less code.  
 
   
-  4.Answer:
+    4.Answer:
+    
   The Destructuring assignment is a very usefull and important syntax in ES6.That is allow us unpack values from arrays or objects into separate variables in a single and clean line.
   Destructuring lets us pull out data easily instead of accessing values one by one.
   🔹1.Array Destructuring:
