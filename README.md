@@ -1,3 +1,7 @@
+## Green Earth Project:
+
+![alt Project-pic](./assets/Project-pic.jpg)
+
 ## Questions' Answers are here:
 
 
@@ -74,7 +78,7 @@ ex:
 
   
     4.Answer:
-    
+
   The Destructuring assignment is a very usefull and important syntax in ES6.That is allow us unpack values from arrays or objects into separate variables in a single and clean line.
   Destructuring lets us pull out data easily instead of accessing values one by one.
   🔹1.Array Destructuring:
